@@ -9,6 +9,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bored.Application.Registrat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bored.Application.Registration.Migrations", "src\Bored.Application.Registration.Migrations\Bored.Application.Registration.Migrations.csproj", "{C0AD784E-F6A4-49C2-93EE-D7F68124A43D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bored.Application.Registration.Api.Contracts", "src\Bored.Application.Registration.Api.Contracts\Bored.Application.Registration.Api.Contracts.csproj", "{C57823EB-08C4-4A60-93D6-A9BF61E3289D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bored.Application.Registration.AppServices", "src\Bored.Application.Registration.AppServices\Bored.Application.Registration.AppServices.csproj", "{E550C23C-3EBB-4398-B540-D5B320171F94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bored.Application.Registration.AppServices.Contracts", "src\Bored.Application.Registration.AppServices.Contracts\Bored.Application.Registration.AppServices.Contracts.csproj", "{9425DB1F-75A0-4BB4-A71A-470DA2590F61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bored.Application.Registration.DataAccess", "src\Bored.Application.Registration.DataAccess\Bored.Application.Registration.DataAccess.csproj", "{18283FED-DCD5-44BB-B071-A59B757D1A3E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +31,22 @@ Global
 		{C0AD784E-F6A4-49C2-93EE-D7F68124A43D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0AD784E-F6A4-49C2-93EE-D7F68124A43D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0AD784E-F6A4-49C2-93EE-D7F68124A43D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C57823EB-08C4-4A60-93D6-A9BF61E3289D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C57823EB-08C4-4A60-93D6-A9BF61E3289D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C57823EB-08C4-4A60-93D6-A9BF61E3289D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C57823EB-08C4-4A60-93D6-A9BF61E3289D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E550C23C-3EBB-4398-B540-D5B320171F94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E550C23C-3EBB-4398-B540-D5B320171F94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E550C23C-3EBB-4398-B540-D5B320171F94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E550C23C-3EBB-4398-B540-D5B320171F94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9425DB1F-75A0-4BB4-A71A-470DA2590F61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9425DB1F-75A0-4BB4-A71A-470DA2590F61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9425DB1F-75A0-4BB4-A71A-470DA2590F61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9425DB1F-75A0-4BB4-A71A-470DA2590F61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18283FED-DCD5-44BB-B071-A59B757D1A3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18283FED-DCD5-44BB-B071-A59B757D1A3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18283FED-DCD5-44BB-B071-A59B757D1A3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18283FED-DCD5-44BB-B071-A59B757D1A3E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,5 +54,9 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{A69BD546-0C3B-465D-8CEB-C8F682C8E7D5} = {4AF0312D-BD8C-43AE-9E9E-A2C31267954C}
 		{C0AD784E-F6A4-49C2-93EE-D7F68124A43D} = {4AF0312D-BD8C-43AE-9E9E-A2C31267954C}
+		{C57823EB-08C4-4A60-93D6-A9BF61E3289D} = {4AF0312D-BD8C-43AE-9E9E-A2C31267954C}
+		{E550C23C-3EBB-4398-B540-D5B320171F94} = {4AF0312D-BD8C-43AE-9E9E-A2C31267954C}
+		{9425DB1F-75A0-4BB4-A71A-470DA2590F61} = {4AF0312D-BD8C-43AE-9E9E-A2C31267954C}
+		{18283FED-DCD5-44BB-B071-A59B757D1A3E} = {4AF0312D-BD8C-43AE-9E9E-A2C31267954C}
 	EndGlobalSection
 EndGlobal

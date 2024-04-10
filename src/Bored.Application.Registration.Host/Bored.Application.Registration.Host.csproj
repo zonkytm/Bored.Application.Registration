@@ -13,4 +13,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Bored.Application.Registration.Api.Contracts\Bored.Application.Registration.Api.Contracts.csproj" />
+    <ProjectReference Include="..\Bored.Application.Registration.AppServices.Contracts\Bored.Application.Registration.AppServices.Contracts.csproj" />
+  </ItemGroup>
+
 </Project>
