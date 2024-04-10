@@ -1,0 +1,6 @@
+@Bored.Application.Registration.Host_HostAddress = http://localhost:5236
+
+GET {{Bored.Application.Registration.Host_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
