@@ -9,13 +9,29 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="DCS.Platform.Kafka.Abstractions" Version="1.1.2" />
+    <PackageReference Include="KafkaFlow" Version="2.5.0" />
+    <PackageReference Include="KafkaFlow.Abstractions" Version="2.5.0" />
+    <PackageReference Include="KafkaFlow.TypedHandler" Version="2.5.0" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.6" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="8.0.3" />
+    <PackageReference Include="KafkaFlow.LogHandler.Microsoft" Version="2.5.0" />
+    <PackageReference Include="KafkaFlow.Microsoft.DependencyInjection" Version="2.5.0" />
+    <PackageReference Include="KafkaFlow.Serializer" Version="2.5.0" />
+    <PackageReference Include="KafkaFlow.Serializer.JsonCore" Version="2.5.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Bored.Application.Registration.Api.Contracts\Bored.Application.Registration.Api.Contracts.csproj" />
     <ProjectReference Include="..\Bored.Application.Registration.AppServices.Contracts\Bored.Application.Registration.AppServices.Contracts.csproj" />
+    <ProjectReference Include="..\Bored.Application.Registration.AppServices\Bored.Application.Registration.AppServices.csproj" />
+    <ProjectReference Include="..\Bored.Application.Registration.Client.Kafka\Bored.Application.Registration.Client.Kafka.csproj" />
+    <ProjectReference Include="..\Bored.Application.Registration.DataAccess\Bored.Application.Registration.DataAccess.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers" />
   </ItemGroup>
 
 </Project>

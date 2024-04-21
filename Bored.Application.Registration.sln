@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bored.Application.Registrat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bored.Application.Registration.DataAccess", "src\Bored.Application.Registration.DataAccess\Bored.Application.Registration.DataAccess.csproj", "{18283FED-DCD5-44BB-B071-A59B757D1A3E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bored.Application.Registration.Client.Kafka", "src\Bored.Application.Registration.Client.Kafka\Bored.Application.Registration.Client.Kafka.csproj", "{A8AEA479-6360-4341-B2C5-DACA63E572C9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{18283FED-DCD5-44BB-B071-A59B757D1A3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18283FED-DCD5-44BB-B071-A59B757D1A3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18283FED-DCD5-44BB-B071-A59B757D1A3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8AEA479-6360-4341-B2C5-DACA63E572C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8AEA479-6360-4341-B2C5-DACA63E572C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8AEA479-6360-4341-B2C5-DACA63E572C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8AEA479-6360-4341-B2C5-DACA63E572C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,5 +64,6 @@ Global
 		{E550C23C-3EBB-4398-B540-D5B320171F94} = {4AF0312D-BD8C-43AE-9E9E-A2C31267954C}
 		{9425DB1F-75A0-4BB4-A71A-470DA2590F61} = {4AF0312D-BD8C-43AE-9E9E-A2C31267954C}
 		{18283FED-DCD5-44BB-B071-A59B757D1A3E} = {4AF0312D-BD8C-43AE-9E9E-A2C31267954C}
+		{A8AEA479-6360-4341-B2C5-DACA63E572C9} = {4AF0312D-BD8C-43AE-9E9E-A2C31267954C}
 	EndGlobalSection
 EndGlobal

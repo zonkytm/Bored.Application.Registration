@@ -1,13 +1,21 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
+        <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Bored.Application.Registration.Api.Contracts\Bored.Application.Registration.Api.Contracts.csproj" />
       <ProjectReference Include="..\Bored.Application.Registration.AppServices.Contracts\Bored.Application.Registration.AppServices.Contracts.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="linq2db" Version="5.4.1" />
+      <PackageReference Include="linq2db.AspNet" Version="5.4.1" />
+      <PackageReference Include="linq2db.PostgreSQL" Version="5.4.1" />
+      <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
     </ItemGroup>
 
 </Project>
