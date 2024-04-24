@@ -2,10 +2,13 @@ using Bored.Application.Registration.AppServices.Contracts.Kafka;
 using Bored.Application.Registration.AppServices.Contracts.Kafka.Handlers;
 using Bored.Application.Registration.AppServices.Extensions;
 using Bored.Application.Registration.Client.Kafka.Events;
+using Bored.Application.Registration.Client.Kafka.Events.Incoming;
+using Bored.Application.Registration.Client.Kafka.Events.Outgoing;
 using Bored.Application.Registration.DataAccess.Extensions;
 using Bored.Application.Registration.Host;
 using Bored.Application.Registration.Host.Kafka;
 using Bored.Application.Registration.Host.Kafka.Handlers;
+using Bored.Application.Registration.Host.Kafka.Producers;
 using DCS.Platform.Kafka.Abstractions.Helpers;
 using KafkaFlow;
 using KafkaFlow.Serializer;
@@ -32,6 +35,24 @@ builder.Services.AddKafka(kafka => kafka
         )
         .AddConsumer(consumer => consumer
             .Topic(KafkaHelpers.GetTopic(typeof(RegisterUserEvent)))
+            .WithGroupId(kafkaOptions.ConsumerGroup)
+            .WithBufferSize(100)
+            .WithWorkersCount(10)
+            .AddMiddlewares(middlewares => middlewares
+                .AddSerializer<JsonCoreSerializer>()
+                .AddTypedHandlers(handlers => handlers
+                    .WithHandlerLifetime(InstanceLifetime.Scoped)
+                    .AddHandler<RegisterUserEventHandler>()
+                    .WhenNoHandlerFound(context =>
+                        Console.WriteLine("Message not handled > Partition: {0} | Offset: {1}",
+                            context.ConsumerContext.Partition,
+                            context.ConsumerContext.Offset)
+                    )
+                )
+            )
+        )
+        .AddConsumer(consumer => consumer
+            .Topic(KafkaHelpers.GetTopic(typeof(AcceptIdeaEvent)))
             .WithGroupId(kafkaOptions.ConsumerGroup)
             .WithBufferSize(100)
             .WithWorkersCount(10)

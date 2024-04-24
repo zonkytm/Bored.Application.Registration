@@ -1,11 +1,9 @@
 ﻿using Bored.Application.Registration.AppServices.Contracts.Kafka;
-using Bored.Application.Registration.AppServices.Contracts.Users;
-using Bored.Application.Registration.AppServices.Contracts.Users.Handlers;
-using Bored.Application.Registration.Client.Kafka.Events;
+using Bored.Application.Registration.Client.Kafka.Events.Outgoing;
 using DCS.Platform.Kafka.Abstractions.Attributes;
 using KafkaFlow;
 
-namespace Bored.Application.Registration.Host.Kafka;
+namespace Bored.Application.Registration.Host.Kafka.Producers;
 
 [KafkaTopic("register-user-event-result")]
 public class RegisterUserEventResultProducer : IRegisterUserEventResultProducer

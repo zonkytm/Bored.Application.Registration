@@ -1,4 +1,5 @@
 ﻿using Bored.Application.Registration.Client.Kafka.Events;
+using Bored.Application.Registration.Client.Kafka.Events.Incoming;
 using KafkaFlow;
 using KafkaFlow.TypedHandler;
 

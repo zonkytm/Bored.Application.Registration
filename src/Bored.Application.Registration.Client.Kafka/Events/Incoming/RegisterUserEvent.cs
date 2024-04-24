@@ -1,7 +1,7 @@
 ﻿using DCS.Platform.Kafka.Abstractions;
 using DCS.Platform.Kafka.Abstractions.Attributes;
 
-namespace Bored.Application.Registration.Client.Kafka.Events;
+namespace Bored.Application.Registration.Client.Kafka.Events.Incoming;
 
 /// <summary>
 /// Событие регистрации пользователя.

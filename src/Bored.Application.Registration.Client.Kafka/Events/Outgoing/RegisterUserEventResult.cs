@@ -1,9 +1,8 @@
-﻿using System.Runtime.CompilerServices;
-using Bored.Application.Registration.Client.Kafka.Enums;
+﻿using Bored.Application.Registration.Client.Kafka.Enums;
 using DCS.Platform.Kafka.Abstractions;
 using DCS.Platform.Kafka.Abstractions.Attributes;
 
-namespace Bored.Application.Registration.Client.Kafka.Events;
+namespace Bored.Application.Registration.Client.Kafka.Events.Outgoing;
 
 /// <summary>
 /// Результат регистрации пользователя.
