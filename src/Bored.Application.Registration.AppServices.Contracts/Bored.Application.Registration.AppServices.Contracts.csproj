@@ -15,5 +15,9 @@
         <PackageReference Include="KafkaFlow.Abstractions" Version="2.5.0" />
         <PackageReference Include="KafkaFlow.TypedHandler" Version="2.5.0" />
     </ItemGroup>
+    
+    <ItemGroup>
+      <Folder Include="Activities\Kafka\Producers" />
+    </ItemGroup>
 
 </Project>

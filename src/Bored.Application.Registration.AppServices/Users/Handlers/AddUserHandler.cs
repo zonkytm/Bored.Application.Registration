@@ -1,13 +1,12 @@
-﻿using Bored.Application.Registration.Api.Contracts;
-using Bored.Application.Registration.AppServices.Contracts.Kafka;
-using Bored.Application.Registration.AppServices.Contracts.Kafka.Producers;
+﻿using Bored.Application.Registration.Api.Contracts.Users;
 using Bored.Application.Registration.AppServices.Contracts.Users.Handlers;
 using Bored.Application.Registration.AppServices.Contracts.Users.Infos;
+using Bored.Application.Registration.AppServices.Contracts.Users.Kafka.Producers;
 using Bored.Application.Registration.AppServices.Contracts.Users.Repositories;
 using Bored.Application.Registration.Client.Kafka.Enums;
 using Bored.Application.Registration.Client.Kafka.Events.Outgoing;
 
-namespace Bored.Application.Registration.AppServices.Users;
+namespace Bored.Application.Registration.AppServices.Users.Handlers;
 
 internal class AddUserHandler : IAddUserHandler
 {

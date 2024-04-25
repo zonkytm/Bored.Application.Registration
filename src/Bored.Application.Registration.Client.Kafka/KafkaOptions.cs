@@ -1,4 +1,4 @@
-﻿namespace Bored.Application.Registration.Host.Kafka;
+﻿namespace Bored.Application.Registration.Client.Kafka;
 
 public class KafkaOptions
 {

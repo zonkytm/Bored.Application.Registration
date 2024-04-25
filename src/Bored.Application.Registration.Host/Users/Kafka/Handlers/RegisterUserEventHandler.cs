@@ -1,10 +1,10 @@
-﻿using Bored.Application.Registration.AppServices.Contracts.Kafka.Handlers;
-using Bored.Application.Registration.AppServices.Contracts.Users.Handlers;
+﻿using Bored.Application.Registration.AppServices.Contracts.Users.Handlers;
 using Bored.Application.Registration.AppServices.Contracts.Users.Infos;
+using Bored.Application.Registration.AppServices.Contracts.Users.Kafka.Handlers;
 using Bored.Application.Registration.Client.Kafka.Events.Incoming;
 using KafkaFlow;
 
-namespace Bored.Application.Registration.Host.Kafka.Handlers;
+namespace Bored.Application.Registration.Host.Users.Kafka.Handlers;
 
 public class RegisterUserEventHandler : IRegisterUserEventHandler
 {

@@ -1,6 +1,6 @@
 ﻿using Bored.Application.Registration.AppServices.Contracts.Activities.Handlers;
 using Bored.Application.Registration.AppServices.Contracts.Activities.Infos;
-using Bored.Application.Registration.AppServices.Contracts.Kafka.Handlers;
+using Bored.Application.Registration.AppServices.Contracts.Activities.Kafka.Handlers;
 using Bored.Application.Registration.Client.Kafka.Events.Incoming;
 using KafkaFlow;
 

@@ -1,6 +1,8 @@
 ﻿using Bored.Application.Registration.Api.Contracts;
+using Bored.Application.Registration.Api.Contracts.Users;
 using Bored.Application.Registration.AppServices.Contracts.Users.Repositories;
 using Bored.Application.Registration.DataAccess.ApplicationContexts;
+using Bored.Application.Registration.DataAccess.Users.Mappers;
 using LinqToDB;
 
 namespace Bored.Application.Registration.DataAccess.Users.Repositories;
@@ -16,16 +18,7 @@ public class UserRepository : IUserRepository
 
     public async Task<Guid> CreateAsync(User user, CancellationToken cancellationToken)
     {
-        var userEntity = new UserEntity
-        {
-            Id = Guid.NewGuid(),
-            ChatId = user.ChatId,
-            TelegramId = user.TelegramId,
-            FirstName = user.FirstName,
-            LastName = user.LastName,
-            UserName = user.UserName,
-            UserLoveId = null
-        };
+        var userEntity = UserMapper.MapUserToUserEntity(user);
 
         var isUserRegistered = await IsUserRegistered(user, cancellationToken);
         
@@ -49,5 +42,14 @@ public class UserRepository : IUserRepository
     public async Task AddUserLove(User user, string loveUsername)
     {
         return;
+    }
+
+    public async Task<User?> FindUserByUserName(string username)
+    {
+        var userEntity = await _context.Users.FirstOrDefaultAsync(entity => entity.UserName.Equals(username));
+
+        var user = UserMapper.MapUserEntityToUser(userEntity);
+
+        return user;
     }
 }

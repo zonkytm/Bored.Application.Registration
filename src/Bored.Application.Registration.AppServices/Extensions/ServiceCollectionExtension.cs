@@ -1,10 +1,9 @@
-﻿using System.ComponentModel.Design;
-using Bored.Application.Registration.AppServices.Activities.Handlers;
+﻿using Bored.Application.Registration.AppServices.Activities.Handlers;
 using Bored.Application.Registration.AppServices.Activities.Validators;
 using Bored.Application.Registration.AppServices.Contracts.Activities.Handlers;
 using Bored.Application.Registration.AppServices.Contracts.Activities.Validators;
 using Bored.Application.Registration.AppServices.Contracts.Users.Handlers;
-using Bored.Application.Registration.AppServices.Users;
+using Bored.Application.Registration.AppServices.Users.Handlers;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Bored.Application.Registration.AppServices.Extensions;

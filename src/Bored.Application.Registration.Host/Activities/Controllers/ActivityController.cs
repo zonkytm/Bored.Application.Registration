@@ -1,6 +1,5 @@
 ﻿using Bored.Application.Registration.Api.Contracts.Activities.Controllers;
 using Bored.Application.Registration.Api.Contracts.Activities.Controllers.Routes;
-using Bored.Application.Registration.Api.Contracts.Activities.Web.Requests;
 using Bored.Application.Registration.Api.Contracts.Activities.Web.Responses;
 using Bored.Application.Registration.AppServices.Contracts.Activities.Handlers;
 using Microsoft.AspNetCore.Mvc;

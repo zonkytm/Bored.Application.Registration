@@ -1,4 +1,4 @@
-﻿namespace Bored.Application.Registration.Api.Contracts;
+﻿namespace Bored.Application.Registration.Api.Contracts.Users;
 
 public class User
 {
