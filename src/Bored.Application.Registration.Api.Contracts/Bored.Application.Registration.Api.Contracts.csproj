@@ -4,10 +4,12 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <Description>Пакет для взаимодействия с проектом Bored.Application.Registration через Rest</Description>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Responses" />
+      <Folder Include="Activities\Web" />
     </ItemGroup>
 
 </Project>

@@ -1,15 +1,15 @@
-﻿using Bored.Application.Registration.AppServices.Contracts.Ideas.Infos;
-using Bored.Application.Registration.AppServices.Contracts.Ideas.Validators;
+﻿using Bored.Application.Registration.AppServices.Contracts.Activities.Infos;
+using Bored.Application.Registration.AppServices.Contracts.Activities.Validators;
 
-namespace Bored.Application.Registration.AppServices.Ideas.Validators;
+namespace Bored.Application.Registration.AppServices.Activities.Validators;
 
-public class IdeaValidator : IIdeaValidator
+public class ActivityValidator : IActivityValidator
 {
-    public bool Validate(ValidateIdeaInfo model)
+    public bool Validate(ValidateActivityInfo model)
     {
         var errorList = new List<string>();
 
-        if (model.IdeaKey <= 0)
+        if (model.ActivityKey <= 0)
         {
             errorList.Add("Идентфикатор идеи не может быть меньше 0.");
         }
@@ -20,7 +20,7 @@ public class IdeaValidator : IIdeaValidator
 
         }
 
-        if (string.IsNullOrWhiteSpace(model.IdeaText) || model.IdeaText.Length == 0)
+        if (string.IsNullOrWhiteSpace(model.ActivityText) || model.ActivityText.Length == 0)
         {
             errorList.Add("Текст идеи не может быть пустым.");
         }

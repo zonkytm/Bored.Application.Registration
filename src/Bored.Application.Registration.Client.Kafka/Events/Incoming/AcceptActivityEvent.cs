@@ -6,13 +6,13 @@ namespace Bored.Application.Registration.Client.Kafka.Events.Incoming;
 /// <summary>
 /// Событие добавления идеи пользователю.
 /// </summary>
-[KafkaTopic("accept-idea-event")]
-public class AcceptIdeaEvent : IKafkaMessage
+[KafkaTopic("accept-activity-event")]
+public class AcceptActivityEvent : IKafkaMessage
 {
     /// <summary>
     /// Идентификатор идеи.
     /// </summary>
-    public long IdeaId { get; set; }
+    public long ActivityId { get; set; }
     
     /// <summary>
     /// Идентификатор пользователя.
@@ -22,5 +22,5 @@ public class AcceptIdeaEvent : IKafkaMessage
     /// <summary>
     /// Текст идеи.
     /// </summary>
-    public string? Idea { get; set; }
+    public string? ActivityText { get; set; }
 }

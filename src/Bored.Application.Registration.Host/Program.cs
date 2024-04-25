@@ -1,5 +1,6 @@
 using Bored.Application.Registration.AppServices.Contracts.Kafka;
 using Bored.Application.Registration.AppServices.Contracts.Kafka.Handlers;
+using Bored.Application.Registration.AppServices.Contracts.Kafka.Producers;
 using Bored.Application.Registration.AppServices.Extensions;
 using Bored.Application.Registration.Client.Kafka.Events;
 using Bored.Application.Registration.Client.Kafka.Events.Incoming;
@@ -22,6 +23,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext(builder.Configuration);
 builder.Services.AddRepositories();
 builder.Services.AddHandlers();
+builder.Services.AddValidators();
 
 builder.Services.Configure<KafkaOptions>(builder.Configuration.GetSection("Kafka"));
 var kafkaOptions = builder.Configuration.GetSection("Kafka").Get<KafkaOptions>();
@@ -52,7 +54,7 @@ builder.Services.AddKafka(kafka => kafka
             )
         )
         .AddConsumer(consumer => consumer
-            .Topic(KafkaHelpers.GetTopic(typeof(AcceptIdeaEvent)))
+            .Topic(KafkaHelpers.GetTopic(typeof(AcceptActivityEvent)))
             .WithGroupId(kafkaOptions.ConsumerGroup)
             .WithBufferSize(100)
             .WithWorkersCount(10)
@@ -60,7 +62,7 @@ builder.Services.AddKafka(kafka => kafka
                 .AddSerializer<JsonCoreSerializer>()
                 .AddTypedHandlers(handlers => handlers
                     .WithHandlerLifetime(InstanceLifetime.Scoped)
-                    .AddHandler<RegisterUserEventHandler>()
+                    .AddHandler<AcceptActivityEventHandler>()
                     .WhenNoHandlerFound(context =>
                         Console.WriteLine("Message not handled > Partition: {0} | Offset: {1}",
                             context.ConsumerContext.Partition,
@@ -74,6 +76,8 @@ builder.Services.AddKafka(kafka => kafka
 builder.Services.AddHealthChecks();
 builder.Services.AddScoped<IRegisterUserEventHandler, RegisterUserEventHandler>();
 builder.Services.AddScoped<IRegisterUserEventResultProducer, RegisterUserEventResultProducer>();
+builder.Services.AddScoped<IAcceptActivityEventHandler, AcceptActivityEventHandler>();
+
 
 var app = builder.Build();
 var lifetime = app.Services.CreateKafkaBus();

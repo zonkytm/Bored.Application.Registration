@@ -1,11 +1,11 @@
-﻿namespace Bored.Application.Registration.AppServices.Contracts.Ideas.Infos;
+﻿namespace Bored.Application.Registration.AppServices.Contracts.Activities.Infos;
 
-public class ValidateIdeaInfo
+public class ValidateActivityInfo
 {
     /// <summary>
     /// Идентификатор идеи.
     /// </summary>
-    public long IdeaKey { get; set; }
+    public long ActivityKey { get; set; }
     
     /// <summary>
     /// Идентификатор пользователя.
@@ -15,5 +15,5 @@ public class ValidateIdeaInfo
     /// <summary>
     /// Текст идеи.
     /// </summary>
-    public string? IdeaText { get; set; }
+    public string? ActivityText { get; set; }
 }

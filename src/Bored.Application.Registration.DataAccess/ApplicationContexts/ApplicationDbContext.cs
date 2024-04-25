@@ -1,4 +1,5 @@
-﻿using Bored.Application.Registration.DataAccess.Users;
+﻿using Bored.Application.Registration.DataAccess.Activities;
+using Bored.Application.Registration.DataAccess.Users;
 using LinqToDB;
 using LinqToDB.Data;
 
@@ -11,4 +12,7 @@ public class ApplicationDbContext : DataConnection
     }
 
     public ITable<UserEntity> Users => this.GetTable<UserEntity>();
+    
+    public ITable<ActivityEntity> Activities => this.GetTable<ActivityEntity>();
+
 }

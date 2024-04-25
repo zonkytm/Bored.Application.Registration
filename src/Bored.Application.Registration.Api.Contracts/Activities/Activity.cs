@@ -1,14 +1,14 @@
-﻿namespace Bored.Application.Registration.AppServices.Contracts.Ideas.Infos;
+﻿namespace Bored.Application.Registration.Api.Contracts.Activities;
 
 /// <summary>
-/// Модель для работы с идеями.
+/// Модель идеи.
 /// </summary>
-public class AddIdeaInfo
+public class Activity
 {
     /// <summary>
     /// Идентификатор идеи.
     /// </summary>
-    public long IdeaKey { get; set; }
+    public long ActivityId { get; set; }
     
     /// <summary>
     /// Идентификатор пользователя.
@@ -18,5 +18,5 @@ public class AddIdeaInfo
     /// <summary>
     /// Текст идеи.
     /// </summary>
-    public string? IdeaText { get; set; }
+    public string? ActivityText { get; set; }
 }

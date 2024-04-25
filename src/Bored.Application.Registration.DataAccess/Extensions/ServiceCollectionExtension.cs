@@ -1,4 +1,6 @@
-﻿using Bored.Application.Registration.AppServices.Contracts.Users.Repositories;
+﻿using Bored.Application.Registration.AppServices.Contracts.Activities.Repositories;
+using Bored.Application.Registration.AppServices.Contracts.Users.Repositories;
+using Bored.Application.Registration.DataAccess.Activities.Repositories;
 using Bored.Application.Registration.DataAccess.ApplicationContexts;
 using Bored.Application.Registration.DataAccess.Users.Repositories;
 using LinqToDB;
@@ -19,5 +21,6 @@ public static class ServiceCollectionExtension
     public static void AddRepositories(this IServiceCollection services)
     {
         services.AddScoped<IUserRepository, UserRepository>();
+        services.AddScoped<IActivityRepository, ActivityRepository>();
     }
 }

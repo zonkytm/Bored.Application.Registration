@@ -1,4 +1,5 @@
 ﻿using Bored.Application.Registration.AppServices.Contracts.Kafka;
+using Bored.Application.Registration.AppServices.Contracts.Kafka.Producers;
 using Bored.Application.Registration.Client.Kafka.Events.Outgoing;
 using DCS.Platform.Kafka.Abstractions.Attributes;
 using KafkaFlow;

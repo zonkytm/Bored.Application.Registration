@@ -44,7 +44,7 @@ public class UserRepository : IUserRepository
                 .FirstOrDefaultAsync(u => u.ChatId == user.ChatId, cancellationToken);
 
             return userEntity != null;
-        }
+    }
 
     public async Task AddUserLove(User user, string loveUsername)
     {
