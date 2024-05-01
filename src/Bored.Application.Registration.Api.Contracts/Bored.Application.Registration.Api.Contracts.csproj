@@ -6,6 +6,7 @@
         <Nullable>enable</Nullable>
         <Description>Пакет для взаимодействия с проектом Bored.Application.Registration через Rest</Description>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageVersion>1.0.2</PackageVersion>
     </PropertyGroup>
 
     <ItemGroup>

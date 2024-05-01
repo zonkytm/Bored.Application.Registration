@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Bored.Application.Registration.Host.Users.Controllers;
 
-[Microsoft.AspNetCore.Components.Route(UserControllerRoutes.BaseRoute)]
+[Route(UserControllerRoutes.BaseRoute)]
 public class UserController : IUserController
 {
     private readonly IFindUserHandler _findUserHandler;
@@ -33,6 +33,5 @@ public class UserController : IUserController
         };
 
         return response;
-        
     }
 }

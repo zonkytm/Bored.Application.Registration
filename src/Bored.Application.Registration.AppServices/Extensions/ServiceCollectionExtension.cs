@@ -14,6 +14,7 @@ public static class ServiceCollectionExtension
     {
         services.AddScoped<IAddUserHandler, AddUserHandler>();
         services.AddScoped<IAddActivityHandler, AddActivityHandler>();
+        services.AddScoped<IFindUserHandler, FindUserHandler>();
     }
 
     public static void AddValidators(this IServiceCollection services)
