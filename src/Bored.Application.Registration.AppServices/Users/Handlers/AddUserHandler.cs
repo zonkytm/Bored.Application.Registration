@@ -13,14 +13,14 @@ internal class AddUserHandler : IAddUserHandler
     private readonly IRegisterUserEventResultProducer _userEventResultProducer;
 
     private readonly IUserRepository _repository;
-    
+
     public AddUserHandler(IRegisterUserEventResultProducer userEventResultProducer, IUserRepository repository)
     {
         _userEventResultProducer = userEventResultProducer;
         _repository = repository;
     }
 
-    public async Task<Guid> Handle(AddUserInfo addUserInfo, CancellationToken cancellationToken)
+    public async Task<long> Handle(AddUserInfo addUserInfo, CancellationToken cancellationToken)
     {
         var user = new User
         {
@@ -37,7 +37,7 @@ internal class AddUserHandler : IAddUserHandler
         var registerUserEventResult = new RegisterUserEventResult
         {
             ChatId = addUserInfo.ChatId,
-            RegisterStatus = registerUserId == Guid.Empty ? RegisterStatus.AlreadyExisted : RegisterStatus.Registered
+            RegisterStatus = registerUserId == default ? RegisterStatus.AlreadyExisted : RegisterStatus.Registered
         };
 
         await _userEventResultProducer.ProduceRegisterUserEventResultAsync(registerUserEventResult);

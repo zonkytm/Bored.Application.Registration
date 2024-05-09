@@ -17,7 +17,8 @@ public static class UserMapper
             TelegramId = userEntity.TelegramId,
             FirstName = userEntity.FirstName,
             LastName = userEntity.LastName,
-            UserName = userEntity.UserName
+            UserName = userEntity.UserName,
+            PartnerId = userEntity.PartnerId
         };
     }
 
@@ -25,12 +26,12 @@ public static class UserMapper
     {
         return new UserEntity
         {
-            Id = Guid.NewGuid(),
             ChatId = user.ChatId,
             TelegramId = user.TelegramId,
             FirstName = user.FirstName,
             LastName = user.LastName,
-            UserName = user.UserName
+            UserName = user.UserName,
+            PartnerId = user.PartnerId
         };
     }
 }

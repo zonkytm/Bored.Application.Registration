@@ -20,7 +20,7 @@ public class FindUserHandler : IFindUserHandler
             return null;
         }
 
-        var user = await _repository.FindUserByUserName(requestUsername);
+        var user = await _repository.GetUserByUserName(requestUsername);
 
         return user;
     }

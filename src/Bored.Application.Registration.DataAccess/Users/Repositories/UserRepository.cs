@@ -16,38 +16,49 @@ public class UserRepository : IUserRepository
         _context = context;
     }
 
-    public async Task<Guid> CreateAsync(User user, CancellationToken cancellationToken)
+    public async Task<long> CreateAsync(User user, CancellationToken cancellationToken)
     {
         var userEntity = UserMapper.MapUserToUserEntity(user);
 
         var isUserRegistered = await IsUserRegistered(user, cancellationToken);
-        
+
         if (isUserRegistered)
         {
-            return Guid.Empty;
+            return default;
         }
-        
+
         await _context.InsertAsync(userEntity, token: cancellationToken);
-        return userEntity.Id;
+        return userEntity.TelegramId;
     }
 
     public async Task<bool> IsUserRegistered(User user, CancellationToken cancellationToken)
     {
         var userEntity = await _context.Users
-                .FirstOrDefaultAsync(u => u.ChatId == user.ChatId, cancellationToken);
+                .FirstOrDefaultAsync(u => u.TelegramId == user.TelegramId, cancellationToken);
 
             return userEntity != null;
     }
 
-    public async Task AddUserLove(User user, string loveUsername)
+    public async Task AddPartner(long id, long partnerId)
     {
-        return;
+        await _context.GetTable<User>()
+            .Where(u => u.TelegramId == id)
+            .Set(u => u.PartnerId, partnerId)
+            .UpdateAsync();
     }
 
-    public async Task<User?> FindUserByUserName(string username)
+    public async Task<User?> GetUserByUserName(string username)
     {
         var userEntity = await _context.Users.FirstOrDefaultAsync(entity => entity.UserName.Equals(username));
 
+        var user = UserMapper.MapUserEntityToUser(userEntity);
+
+        return user;
+    }
+
+    public async Task<User?> GetUserById(long id)
+    {
+        var userEntity = await _context.Users.FirstOrDefaultAsync(entity => entity.TelegramId == id);
         var user = UserMapper.MapUserEntityToUser(userEntity);
 
         return user;

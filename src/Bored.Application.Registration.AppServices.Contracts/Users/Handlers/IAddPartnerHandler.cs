@@ -2,7 +2,7 @@
 
 namespace Bored.Application.Registration.AppServices.Contracts.Users.Handlers;
 
-public interface IAddUserHandler
+public interface IAddPartnerHandler
 {
-    public Task<long> Handle(AddUserInfo addUserInfo, CancellationToken cancellationToken);
+    Task Handle(AddPartnerInfo addPartnerInfo);
 }

@@ -1,7 +1,8 @@
-﻿using DCS.Platform.Kafka.Abstractions;
+﻿using Bored.Application.Registration.Api.Contracts.Users;
+using DCS.Platform.Kafka.Abstractions;
 using DCS.Platform.Kafka.Abstractions.Attributes;
 
-namespace Bored.Application.Registration.Client.Kafka.Events.Incoming;
+namespace Bored.Application.Registration.Client.Kafka.Events.Outgoing;
 
 /// <summary>
 /// Событие добавления в партнеры к пользователю.
@@ -17,5 +18,5 @@ public class AddPartnerEvent : IKafkaMessage
     /// <summary>
     /// Идентификатор пользвателя который добавляется в партнеры.
     /// </summary>
-    public long PotentialPartnerId { get; set; }
+    public User PotentialPartnerUsername { get; set; }
 }

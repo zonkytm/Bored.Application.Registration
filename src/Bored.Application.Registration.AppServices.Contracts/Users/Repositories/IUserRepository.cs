@@ -5,8 +5,9 @@ namespace Bored.Application.Registration.AppServices.Contracts.Users.Repositorie
 
 public interface IUserRepository
 {
-    Task<Guid> CreateAsync(User user, CancellationToken cancellationToken);
+    Task<long> CreateAsync(User user, CancellationToken cancellationToken);
     Task<bool> IsUserRegistered(User user, CancellationToken cancellationToken);
-    Task AddUserLove(User user, string loveUsername);
-    Task<User?> FindUserByUserName(string username);
+    Task AddPartner(long id, long partnerId);
+    Task<User?> GetUserByUserName(string username);
+    Task<User?> GetUserById(long id);
 }

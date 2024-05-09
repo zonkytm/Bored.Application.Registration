@@ -17,4 +17,8 @@
       <PackageReference Include="DCS.Platform.Kafka.Abstractions" Version="1.1.2" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Bored.Application.Registration.Api.Contracts\Bored.Application.Registration.Api.Contracts.csproj" />
+    </ItemGroup>
+
 </Project>

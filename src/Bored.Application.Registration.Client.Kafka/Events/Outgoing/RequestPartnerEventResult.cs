@@ -7,8 +7,8 @@ namespace Bored.Application.Registration.Client.Kafka.Events.Outgoing;
 /// <summary>
 /// Результат события запроса на добавления партнера.
 /// </summary>
-[KafkaTopic("partner-request-event-result")]
-public class PartnerRequestEventResult : IKafkaMessage
+[KafkaTopic("request-partner-event-result")]
+public class RequestPartnerEventResult : IKafkaMessage
 {
     /// <summary>
     /// Идентификатор пользователя.

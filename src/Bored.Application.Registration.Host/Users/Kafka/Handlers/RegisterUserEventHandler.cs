@@ -15,17 +15,17 @@ public class RegisterUserEventHandler : IRegisterUserEventHandler
         _addUserHandler = addUserHandler;
     }
 
-    public async Task Handle(IMessageContext context, RegisterUserEvent registerUserEventevent)
+    public async Task Handle(IMessageContext context, RegisterUserEvent @event)
     {
-        if (registerUserEventevent != null)
+        if (@event != null)
         {
             var addUserInfo = new AddUserInfo
             {
-                ChatId = registerUserEventevent.ChatId,
-                TelegramId = registerUserEventevent.TelegramId,
-                FirstName = registerUserEventevent.FirstName,
-                LastName = registerUserEventevent.LastName,
-                UserName = registerUserEventevent.UserName
+                ChatId = @event.ChatId,
+                TelegramId = @event.TelegramId,
+                FirstName = @event.FirstName,
+                LastName = @event.LastName,
+                UserName = @event.UserName
             };
 
             await _addUserHandler.Handle(addUserInfo, CancellationToken.None);
