@@ -14,7 +14,7 @@ public class RegisterUserEventResult : IKafkaMessage
    /// Идентификатор чата пользователя.
    /// </summary>
    public long ChatId { get; set; }
-   
+
    /// <summary>
    /// Статус регистрации пользователя.
    /// </summary>

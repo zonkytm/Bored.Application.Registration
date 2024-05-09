@@ -4,23 +4,18 @@ using DCS.Platform.Kafka.Abstractions.Attributes;
 namespace Bored.Application.Registration.Client.Kafka.Events.Incoming;
 
 /// <summary>
-/// Событие добавления идеи пользователю.
+/// Событие запроса на добавления партнера.
 /// </summary>
-[KafkaTopic("accept-activity-event")]
-public class AcceptActivityEvent : IKafkaMessage
+[KafkaTopic("partner-request-event-result")]
+public class PartnerRequestEvent : IKafkaMessage
 {
-    /// <summary>
-    /// Идентификатор идеи.
-    /// </summary>
-    public long ActivityId { get; set; }
-
     /// <summary>
     /// Идентификатор пользователя.
     /// </summary>
     public long TelegramId { get; set; }
 
     /// <summary>
-    /// Текст идеи.
+    /// Идентификатор потенциального партнера.
     /// </summary>
-    public string? ActivityText { get; set; }
+    public long PartnerTelegramId { get; set; }
 }

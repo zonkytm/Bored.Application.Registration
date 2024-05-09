@@ -9,7 +9,7 @@ public enum RegisterStatus
     /// Новый пользователь добавлен.
     /// </summary>
     Registered,
-    
+
     /// <summary>
     /// Пользователь с такими данными уже существовал
     /// </summary>
