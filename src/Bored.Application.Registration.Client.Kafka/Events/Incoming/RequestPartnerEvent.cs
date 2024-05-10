@@ -6,7 +6,7 @@ namespace Bored.Application.Registration.Client.Kafka.Events.Incoming;
 /// <summary>
 /// Событие запроса на добавления партнера.
 /// </summary>
-[KafkaTopic("request-partner-event-result")]
+[KafkaTopic("request-partner-event")]
 public class RequestPartnerEvent : IKafkaMessage
 {
     /// <summary>

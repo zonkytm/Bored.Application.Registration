@@ -35,6 +35,14 @@ builder.Services.AddKafka(kafka => kafka
             .AddMiddlewares(middlewares => middlewares.AddSerializer<JsonCoreSerializer>())
             .DefaultTopic(KafkaHelpers.GetTopic(typeof(RegisterUserEventResult)))
         )
+        .AddProducer<AddPartnerEventProducer>(builder => builder
+            .AddMiddlewares(middlewares => middlewares.AddSerializer<JsonCoreSerializer>())
+            .DefaultTopic(KafkaHelpers.GetTopic(typeof(AddPartnerEvent)))
+        )
+        .AddProducer<RequestPartnerEventResultProducer>(builder => builder
+            .AddMiddlewares(middlewares => middlewares.AddSerializer<JsonCoreSerializer>())
+            .DefaultTopic(KafkaHelpers.GetTopic(typeof(RequestPartnerEventResult)))
+        )
         .AddConsumer(consumer => consumer
             .Topic(KafkaHelpers.GetTopic(typeof(RegisterUserEvent)))
             .WithGroupId(kafkaOptions.ConsumerGroup)
@@ -71,12 +79,53 @@ builder.Services.AddKafka(kafka => kafka
                 )
             )
         )
+        .AddConsumer(consumer => consumer
+            .Topic(KafkaHelpers.GetTopic(typeof(AddPartnerEventResult)))
+            .WithGroupId(kafkaOptions.ConsumerGroup)
+            .WithBufferSize(100)
+            .WithWorkersCount(10)
+            .AddMiddlewares(middlewares => middlewares
+                .AddSerializer<JsonCoreSerializer>()
+                .AddTypedHandlers(handlers => handlers
+                    .WithHandlerLifetime(InstanceLifetime.Scoped)
+                    .AddHandler<AddPartnerEventResultHandler>()
+                    .WhenNoHandlerFound(context =>
+                        Console.WriteLine("Message not handled > Partition: {0} | Offset: {1}",
+                            context.ConsumerContext.Partition,
+                            context.ConsumerContext.Offset)
+                    )
+                )
+            )
+        )
+        .AddConsumer(consumer => consumer
+            .Topic(KafkaHelpers.GetTopic(typeof(RequestPartnerEvent)))
+            .WithGroupId(kafkaOptions.ConsumerGroup)
+            .WithBufferSize(100)
+            .WithWorkersCount(10)
+            .AddMiddlewares(middlewares => middlewares
+                .AddSerializer<JsonCoreSerializer>()
+                .AddTypedHandlers(handlers => handlers
+                    .WithHandlerLifetime(InstanceLifetime.Scoped)
+                    .AddHandler<RequestPartnerEventHandler>()
+                    .WhenNoHandlerFound(context =>
+                        Console.WriteLine("Message not handled > Partition: {0} | Offset: {1}",
+                            context.ConsumerContext.Partition,
+                            context.ConsumerContext.Offset)
+                    )
+                )
+            )
+        )
     )
 );
 builder.Services.AddHealthChecks();
 builder.Services.AddScoped<IRegisterUserEventHandler, RegisterUserEventHandler>();
 builder.Services.AddScoped<IRegisterUserEventResultProducer, RegisterUserEventResultProducer>();
+builder.Services.AddScoped<IRequestPartnerEventResultProducer, RequestPartnerEventResultProducer>();
+builder.Services.AddScoped<IAddPartnerEventProducer, AddPartnerEventProducer>();
+
 builder.Services.AddScoped<IAcceptActivityEventHandler, AcceptActivityEventHandler>();
+builder.Services.AddScoped<IAddPartnerEventResultHandler, AddPartnerEventResultHandler>();
+builder.Services.AddScoped<IRequestPartnerEventHandler, RequestPartnerEventHandler>();
 
 
 var app = builder.Build();
