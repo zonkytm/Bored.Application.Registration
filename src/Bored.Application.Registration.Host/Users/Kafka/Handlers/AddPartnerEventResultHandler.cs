@@ -25,7 +25,7 @@ public class AddPartnerEventResultHandler : IAddPartnerEventResultHandler
             var addPartnerInfo = new AddPartnerInfo
             {
                 TelegramId = @event.TelegramId,
-                PartnerUsername = @event.PartnerUsername
+                PartnerId = @event.PartnerId
             };
             await _addPartnerHandler.Handle(addPartnerInfo);
         }

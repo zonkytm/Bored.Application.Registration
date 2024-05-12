@@ -10,5 +10,5 @@ public class User
 
     public string UserName { get; set; }
 
-    public long PartnerId { get; set; }
+    public long? PartnerId { get; set; }
 }

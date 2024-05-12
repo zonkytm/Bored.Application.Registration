@@ -3,5 +3,5 @@
 public class RequestPartnerInfo
 {
     public long TelegramId { get; set; }
-    public string PartnerUsername { get; set; }
+    public long PartnerId { get; set; }
 }

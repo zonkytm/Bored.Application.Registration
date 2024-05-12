@@ -18,7 +18,7 @@ public class AddPartnerEventResult : IKafkaMessage
     /// <summary>
     /// Идентификатор пользователя который добавлялся в партнеры.
     /// </summary>
-    public string PartnerUsername { get; set; }
+    public long PartnerId { get; set; }
 
     /// <summary>
     /// Результат запроса в партнеры.

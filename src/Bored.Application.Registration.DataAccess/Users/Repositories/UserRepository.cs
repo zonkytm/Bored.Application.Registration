@@ -41,7 +41,7 @@ public class UserRepository : IUserRepository
 
     public async Task AddPartner(long id, long partnerId)
     {
-        await _context.GetTable<User>()
+        await _context.GetTable<UserEntity>()
             .Where(u => u.TelegramId == id)
             .Set(u => u.PartnerId, partnerId)
             .UpdateAsync();

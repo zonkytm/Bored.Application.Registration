@@ -26,7 +26,7 @@ public class ActivityRepository : IActivityRepository
                 TelegramId = activities.TelegramId,
                 ActivityText = activities.ActivityText
             };
-        
+
         return activitiesList.ToArray();
     }
 
@@ -45,7 +45,7 @@ public class ActivityRepository : IActivityRepository
         };
 
         var isActivityAdded = await IsActivityAdded(activity, CancellationToken.None);
-        
+
         if (isActivityAdded)
         {
             return;

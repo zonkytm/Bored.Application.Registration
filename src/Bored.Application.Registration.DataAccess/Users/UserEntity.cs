@@ -3,7 +3,7 @@ using LinqToDB.Mapping;
 
 namespace Bored.Application.Registration.DataAccess.Users;
 
-[LinqToDB.Mapping.Table( Schema = "bored_schema" , Name = "users")]
+[Table( Schema = "bored_schema" , Name = "users")]
 public class UserEntity
 {
     [PrimaryKey]
@@ -24,5 +24,5 @@ public class UserEntity
     public string UserName { get; set; }
 
     [Column("partner_id")]
-    public long PartnerId { get; set; } = 0;
+    public long? PartnerId { get; set; }
 }

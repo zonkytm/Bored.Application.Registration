@@ -8,9 +8,9 @@ namespace Bored.Application.Registration.Host.Users.Kafka.Producers;
 [KafkaTopic("add-partner-event")]
 public class AddPartnerEventProducer : IAddPartnerEventProducer
 {
-    private readonly IMessageProducer<RegisterUserEventResultProducer> _messageProducer;
+    private readonly IMessageProducer<AddPartnerEventProducer> _messageProducer;
 
-    public AddPartnerEventProducer(IMessageProducer<RegisterUserEventResultProducer> messageProducer)
+    public AddPartnerEventProducer(IMessageProducer<AddPartnerEventProducer> messageProducer)
     {
         _messageProducer = messageProducer;
     }

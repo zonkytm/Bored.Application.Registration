@@ -24,7 +24,7 @@ public class RequestPartnerHandler : IRequestPartnerHandler
     {
         var user = await _repository.GetUserById(requestPartnerInfo.TelegramId);
 
-        var partner = await _repository.GetUserByUserName(requestPartnerInfo.PartnerUsername);
+        var partner = await _repository.GetUserById(requestPartnerInfo.PartnerId);
 
         if (user == null || partner == null)
         {
@@ -46,7 +46,7 @@ public class RequestPartnerHandler : IRequestPartnerHandler
             var addPartnerEvent = new AddPartnerEvent
             {
                 TelegramId = partner.TelegramId,
-                PotentialPartnerUsername = user
+                PotentialPartner = user
             };
 
             await _addPartnerEventProducer.ProduceAddPartnerEventAsync(addPartnerEvent);

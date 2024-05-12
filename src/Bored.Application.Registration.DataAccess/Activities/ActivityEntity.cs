@@ -14,13 +14,13 @@ public class ActivityEntity
     [PrimaryKey]
     [Column("activity_id"), Identity]
     public long ActivityId { get; set; }
-    
+
     /// <summary>
     /// Идентификатор пользователя.
     /// </summary>
     [Column("telegram_id")]
     public long TelegramId { get; set; }
-    
+
     /// <summary>
     /// Текст идеи.
     /// </summary>

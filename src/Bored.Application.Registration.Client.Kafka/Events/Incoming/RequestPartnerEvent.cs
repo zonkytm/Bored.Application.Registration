@@ -17,5 +17,5 @@ public class RequestPartnerEvent : IKafkaMessage
     /// <summary>
     /// Ник потенциального партнера.
     /// </summary>
-    public string PartnerUsername { get; set; }
+    public long PartnerId { get; set; }
 }

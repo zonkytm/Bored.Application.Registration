@@ -18,7 +18,7 @@ public class AddPartnerHandler : IAddPartnerHandler
 
     public async Task Handle(AddPartnerInfo addPartnerInfo)
     {
-        var partner = await _repository.GetUserByUserName(addPartnerInfo.PartnerUsername);
+        var partner = await _repository.GetUserById(addPartnerInfo.PartnerId);
 
         await _repository.AddPartner(addPartnerInfo.TelegramId, partner.TelegramId);
         await _repository.AddPartner(partner.TelegramId, addPartnerInfo.TelegramId);

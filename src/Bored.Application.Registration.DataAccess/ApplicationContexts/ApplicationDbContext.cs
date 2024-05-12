@@ -12,7 +12,7 @@ public class ApplicationDbContext : DataConnection
     }
 
     public ITable<UserEntity> Users => this.GetTable<UserEntity>();
-    
+
     public ITable<ActivityEntity> Activities => this.GetTable<ActivityEntity>();
 
 }

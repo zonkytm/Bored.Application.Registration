@@ -9,11 +9,6 @@ public class ActivityValidator : IActivityValidator
     {
         var errorList = new List<string>();
 
-        if (model.ActivityKey <= 0)
-        {
-            errorList.Add("Идентфикатор идеи не может быть меньше 0.");
-        }
-
         if (model.TelegramId <= 0)
         {
             errorList.Add("Идентфикатор пользователя не может быть меньше 0.");

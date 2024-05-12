@@ -9,8 +9,8 @@ public class AddActivityHandler : IAddActivityHandler
 {
     private readonly IActivityRepository _repository;
 
-    private readonly IActivityValidator _validator; 
-    
+    private readonly IActivityValidator _validator;
+
     public AddActivityHandler(IActivityRepository repository, IActivityValidator validator)
     {
         _repository = repository;
@@ -35,7 +35,7 @@ public class AddActivityHandler : IAddActivityHandler
         {
             return;
         }
-        
+
         await _repository.AddActivity(addIdeaInfo);
     }
 }

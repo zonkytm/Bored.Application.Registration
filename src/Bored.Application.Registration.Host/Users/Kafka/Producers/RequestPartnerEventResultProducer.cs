@@ -8,9 +8,9 @@ namespace Bored.Application.Registration.Host.Users.Kafka.Producers;
 [KafkaTopic("request-partner-event-result")]
 public class RequestPartnerEventResultProducer : IRequestPartnerEventResultProducer
 {
-    private readonly IMessageProducer<RegisterUserEventResultProducer> _messageProducer;
+    private readonly IMessageProducer<RequestPartnerEventResultProducer> _messageProducer;
 
-    public RequestPartnerEventResultProducer(IMessageProducer<RegisterUserEventResultProducer> messageProducer)
+    public RequestPartnerEventResultProducer(IMessageProducer<RequestPartnerEventResultProducer> messageProducer)
     {
         _messageProducer = messageProducer;
     }

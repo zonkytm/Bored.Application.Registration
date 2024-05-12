@@ -28,7 +28,8 @@ internal class AddUserHandler : IAddUserHandler
             TelegramId = addUserInfo.TelegramId,
             FirstName = addUserInfo.FirstName,
             LastName = addUserInfo.LastName,
-            UserName = addUserInfo.UserName
+            UserName = addUserInfo.UserName,
+            PartnerId = null
         };
 
 

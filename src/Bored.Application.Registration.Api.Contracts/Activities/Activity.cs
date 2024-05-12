@@ -9,12 +9,12 @@ public class Activity
     /// Идентификатор идеи.
     /// </summary>
     public long ActivityId { get; set; }
-    
+
     /// <summary>
     /// Идентификатор пользователя.
     /// </summary>
     public long TelegramId { get; set; }
-    
+
     /// <summary>
     /// Текст идеи.
     /// </summary>

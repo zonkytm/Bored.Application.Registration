@@ -22,7 +22,7 @@ public class RequestPartnerEventHandler : IRequestPartnerEventHandler
             var requestPartnerInfo = new RequestPartnerInfo
             {
                 TelegramId = @event.TelegramId,
-                PartnerUsername = @event.PartnerUsername
+                PartnerId = @event.PartnerId
             };
 
             await _requestPartnerHandler.Handle(requestPartnerInfo);

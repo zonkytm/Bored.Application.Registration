@@ -18,5 +18,5 @@ public class AddPartnerEvent : IKafkaMessage
     /// <summary>
     /// Идентификатор пользвателя который добавляется в партнеры.
     /// </summary>
-    public User PotentialPartnerUsername { get; set; }
+    public User PotentialPartner { get; set; }
 }
